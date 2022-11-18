@@ -1,13 +1,11 @@
 #include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-
 /**
   * print_all - print anything.
   * @format: a list of types of arguments passed to the function
   * Return : return 0
   */
-
 void print_all(const char * const format, ...)
 {
 	va_list valist;
@@ -23,8 +21,7 @@ void print_all(const char * const format, ...)
 	while (t_arg[j])
 	{
 		if (format[i] == t_arg[j] && c)
-		{
-			printf(", ");
+		{	printf(", ");
 			break;
 		} j++;
 	}
@@ -42,13 +39,10 @@ void print_all(const char * const format, ...)
 	case 's':
 		str = va_arg(valist, char *), c = 1;
 		if (!str)
-		{
-			printf("(nil)");
-			break;
-		}
+		{	printf("(nil)");
+			break;	}
 		printf("%s", str);
 		break;
 		} i++;
 	}
-	printf("\n"), va_end(valist);
-}
+	printf("\n"), va_end(valist);	}
